@@ -9,21 +9,45 @@ Page({
   data: {
     showUploadTip: false,
     powerList: [{
-      title: '哈融',
+      title: '哈融',"goDate": "2023-09-09 10:43:45",
       tip: '拼车，150/人',
       showItem: false,
       item: [{
-        title: '部署服务',
+        title: '240/人',
         page: 'deployService'
       }]
     }, {
-      title: '庙香山',
+      title: '庙香山',"goDate": "2023-09-09 10:43:45",
       tip: '拼车 ，40/人',
       showItem: false,
-    }, {
-      title: '北大壶',
+      item: [{
+        title: '40/人',
+        page: 'deployService'
+      }]
+    },
+    {
+      "driver": "bym",
+      "phone": "17746569901",
+      "wxNumber": "bym123456",
+      "origin": "景阳大路和平大街",
+      "dest": "庙香山滑雪场",
+      "equipmentNumber": 2,
+      "peopleNumber": 3,
+      "goDate": "2023-09-09 10:43:45",
+      "remake": "无",
+      "status": 0,
+      "createDate": "2023-09-06 10:43:52"
+  },
+    , {
+      title: '北大壶',"goDate": "2023-09-09 10:43:45",
       tip: '拼车 ，120/人',
       showItem: false,
+      item: [{
+        title: '140/人',
+        page: 'deployService'
+      }]
+      
+
     }],
     envList,
     selectedEnv: envList[0],

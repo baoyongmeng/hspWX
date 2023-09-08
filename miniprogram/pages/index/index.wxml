@@ -8,7 +8,8 @@
   <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
     <view class="power_info" data-index="{{index}}" bindtap="onClickPowerInfo">
       <view class="power_info_text">
-        <view class="power_info_text_title">{{power.title}}</view>
+        <view class="power_info_text_title">{{power.goDate}}</view>
+        <view class="power_info_text_title">目的地：{{power.title}}</view>
         <view class="power_info_text_tip">{{power.tip}}</view>
       </view>
       <!-- <image wx:if="{{!power.showItem}}" class="power_info_more" src="../../images/arrow.svg"></image>
@@ -19,7 +20,7 @@
         <view class="line"></view>
         <view class="power_item" bindtap="jumpPage" data-page="{{item.page}}">
           <view class="power_item_title">{{item.title}}</view>
-          <image class="power_item_icon" src="../../images/arrow.svg"></image>
+          <!-- <image class="power_item_icon" src="../../images/arrow.svg"></image> -->
         </view>
       </view>
     </view>

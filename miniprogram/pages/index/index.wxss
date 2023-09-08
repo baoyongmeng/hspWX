@@ -57,7 +57,7 @@ page {
 .power_info_text_title {
   margin-bottom: 10rpx;
   font-weight: 400;
-  font-size: 35rpx;
+  font-size: 30rpx;
 }
 
 .power_info_text_tip {
@@ -72,7 +72,10 @@ page {
 }
 
 .power_item_title {
-  font-size: 30rpx;
+  margin: 0 0 0 auto;
+  font-size: 35rpx;
+  color: red;
+  font-weight: bold;
 }
 
 .power_item_icon {
