@@ -24,10 +24,10 @@ page {
 
 .power {
   margin-top: 30rpx;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: white;
-  width: 93%;
-  padding-bottom: 1rpx;
+  width: 94%;
+  padding-bottom: 15rpx;
 }
 
 .power_info {
@@ -64,17 +64,33 @@ page {
   color: rgba(0, 0, 0, 0.4);
   font-size: 25rpx;
 }
+.power_driver_phone {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 28rpx;
+  font-weight: bold;
+  padding-left: 2%;
+}
+
 
 .power_item {
   padding: 30rpx 25rpx;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .power_item_title {
-  margin: 0 0 0 auto;
+  /* margin: 0 0 0 auto; */
+  float: right;
+  padding-right: 5%;
   font-size: 35rpx;
   color: red;
+}
+.power_driver {
+  text-align: left;
+  margin: auto 0 ;
+  float: right;
+  font-size: 25rpx;
+  color: black;
   font-weight: bold;
 }
 

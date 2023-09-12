@@ -9,18 +9,22 @@
     <view class="power_info" data-index="{{index}}" bindtap="onClickPowerInfo">
       <view class="power_info_text">
         <view class="power_info_text_title">{{power.goDate}}</view>
-        <view class="power_info_text_title">目的地：{{power.title}}</view>
-        <view class="power_info_text_tip">{{power.tip}}</view>
+        <view class="power_info_text_title">目的地：{{power.dest}}</view>
+        <view class="power_info_text_title">出发地：{{power.origin}}</view>
+        <view class="power_info_text_tip">
+        {{power.peopleNumber}}人/{{power.equipmentNumber}}板
+        </view>
+       
       </view>
-      <!-- <image wx:if="{{!power.showItem}}" class="power_info_more" src="../../images/arrow.svg"></image>
-      <image wx:if="{{power.showItem}}" class="power_info_less" src="../../images/arrow.svg"></image> -->
+
     </view>
+    <view class="power_item_title">{{power.remake}}</view>
     <view wx:if="{{power.showItem}}">
-      <view wx:key="title" wx:for="{{power.item}}">
+      <view wx:key="remake" wx:for="{{power.item}}">
         <view class="line"></view>
+        <view class="power_driver_phone">车主联系方式：</view>
         <view class="power_item" bindtap="jumpPage" data-page="{{item.page}}">
-          <view class="power_item_title">{{item.title}}</view>
-          <!-- <image class="power_item_icon" src="../../images/arrow.svg"></image> -->
+          <view class="power_driver">{{power.driver}}</view>:<view class="power_driver">{{power.phone}}</view>
         </view>
       </view>
     </view>
