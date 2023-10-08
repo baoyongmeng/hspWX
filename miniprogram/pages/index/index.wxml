@@ -1,10 +1,16 @@
 <!--index.wxml-->
 <view class="container">
 
-  <view class="title">快速了解云开发</view>
+  <view class="title">冲冲冲</view>
 
-  <view class="top_tip">免鉴权接口调用 免部署后台 高并发</view>
+  <view class="top_tip">-------------------------</view>
+  <view class="carFindP" bindtap="onClickShows">
+    车找人
+    <view wx:if="{{shows}}">
+      <view class="lineOne" />
+    </view>
 
+  </view>
   <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
     <view class="power_info" data-index="{{index}}" bindtap="onClickPowerInfo">
       <view class="power_info_text">
@@ -12,9 +18,9 @@
         <view class="power_info_text_title">目的地：{{power.dest}}</view>
         <view class="power_info_text_title">出发地：{{power.origin}}</view>
         <view class="power_info_text_tip">
-        {{power.peopleNumber}}人/{{power.equipmentNumber}}板
+          {{power.peopleNumber}}人/{{power.equipmentNumber}}板
         </view>
-       
+
       </view>
 
     </view>

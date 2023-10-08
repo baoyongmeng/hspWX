@@ -8,44 +8,56 @@ const {
 Page({
   data: {
     showUploadTip: false,
+    shows: false,
     powerList: [{
       dest: '哈融',
       origin: '景阳大路和平大街',
       goDate: "2023-09-09 10:43:45",
       equipmentNumber: "2",
       peopleNumber: "2",
-      driver:"包子",
-      phone:"17746569901",
+      driver: "包子",
+      phone: "17746569901",
       showItem: false,
       remake: '240/人',
       item: [{
-        // remake: '240/人',
         page: 'deployService'
       }]
     }, {
-      dest: '庙香山',"goDate": "2023-09-09 10:43:45",
+      dest: '庙香山',
+      "goDate": "2023-09-09 10:43:45",
       tip: '拼车 ，40/人',
       showItem: false,
+      remake: '40/人',
+      equipmentNumber: "2",
+      peopleNumber: "2",
+      driver: "包子",
+      phone: "17746569901",
       item: [{
         remake: '40/人',
         page: 'deployService'
       }]
-    }
-    , {
-      dest: '北大壶',"goDate": "2023-09-09 10:43:45",
+    }, {
+      dest: '北大壶',
+      "goDate": "2023-09-09 10:43:45",
       tip: '拼车 ，120/人',
       showItem: false,
+      remake: '140/人',
+      equipmentNumber: "2",
+      peopleNumber: "2",
+      driver: "包子",
+      phone: "17746569901",
       item: [{
         remake: '140/人',
         page: 'deployService'
       }]
-      
+
 
     }],
     envList,
     selectedEnv: envList[0],
     haveCreateCollection: false
   },
+
 
   onClickPowerInfo(e) {
     // debugger;
@@ -61,23 +73,31 @@ Page({
     };
     wx.request({
       url: 'http://localhost:9090/hspTest/test',
-      method:'GET',
-      header:{
-        'X-LC-Id': 'wx65a42d756d96b14f', 
-        'X-LC-Key': ' 自己的key', 
+      method: 'GET',
+      header: {
+        'X-LC-Id': 'wx65a42d756d96b14f',
+        'X-LC-Key': ' 自己的key',
         'Content-Type': ' application/json'
       },
-      // data:{
-      //   "name":"张无忌",
-      //   "score":80,
-      //   "gender":1
-      // },
-      success:(res)=>{
+      data:{
+        "name":"张无忌",
+        "score":80,
+        "gender":1
+      },
+      success: (res) => {
         console.log(res);
       }
     })
   },
- 
+  onClickShows(e) {
+    // debugger;
+    var tmp = !this.data.shows;
+    // console.log(e);
+    this.setData({
+      shows: tmp
+    });
+    wx.hideLoading();
+  },
   onChangeShowEnvChoose() {
     wx.showActionSheet({
       itemList: this.data.envList.map(i => i.alias),
@@ -116,30 +136,30 @@ Page({
       title: '',
     });
     wx.cloud.callFunction({
-        name: 'quickstartFunctions',
-        config: {
-          env: this.data.selectedEnv.envId
-        },
-        data: {
-          type: 'createCollection'
-        }
-      }).then((resp) => {
-        if (resp.result.success) {
-          this.setData({
-            haveCreateCollection: true
-          });
-        }
+      name: 'quickstartFunctions',
+      config: {
+        env: this.data.selectedEnv.envId
+      },
+      data: {
+        type: 'createCollection'
+      }
+    }).then((resp) => {
+      if (resp.result.success) {
         this.setData({
-          powerList
+          haveCreateCollection: true
         });
-        wx.hideLoading();
-      }).catch((e) => {
-        console.log(e);
-        this.setData({
-          showUploadTip: true
-        });
-        wx.hideLoading();
+      }
+      this.setData({
+        powerList
       });
+      wx.hideLoading();
+    }).catch((e) => {
+      console.log(e);
+      this.setData({
+        showUploadTip: true
+      });
+      wx.hideLoading();
+    });
 
   }
 });

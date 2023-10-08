@@ -21,7 +21,15 @@ page {
   color: #888888;
   margin-bottom: 28rpx;
 }
-
+.carFindP {
+   position: absolute;
+   left: 0;
+   padding-left: 4%;
+   padding-top: 15%;
+   font-size: 35rpx;
+   color: rgb(75, 155, 247);
+   font-weight: bold;
+}
 .power {
   margin-top: 30rpx;
   border-radius: 15px;
@@ -104,6 +112,14 @@ page {
   margin: 0 auto;
   height: 2rpx;
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.lineOne {
+  width: 100%;
+  float: left;
+  /* margin: 0 auto; */
+  height: 5rpx;
+  background-color: rgb(75, 155, 247);
 }
 
 .environment {
