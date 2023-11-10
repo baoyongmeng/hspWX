@@ -4,11 +4,12 @@
 const {
   envList
 } = require('../../envList.js');
+var http = require("../../common/http");  //引入
 
 Page({
   data: {
     showUploadTip: false,
-    shows: false,
+    shows: true,
     powerList: [{
       dest: '哈融',
       origin: '景阳大路和平大街',
@@ -71,30 +72,24 @@ Page({
         powerList
       });
     };
-    wx.request({
-      url: 'http://localhost:9090/hspTest/test',
-      method: 'GET',
-      header: {
-        'X-LC-Id': 'wx65a42d756d96b14f',
-        'X-LC-Key': ' 自己的key',
-        'Content-Type': ' application/json'
-      },
-      data:{
-        "name":"张无忌",
-        "score":80,
-        "gender":1
-      },
-      success: (res) => {
-        console.log(res);
-      }
-    })
   },
   onClickShows(e) {
     // debugger;
     var tmp = !this.data.shows;
+    var tmp1 = this.data.shows;
     // console.log(e);
+    
+ 
+    //调用
+    http.get(http.getBroadcastDetailByGroupId, "myData").then((res, err) => {
+                console.log(res, err)
+                if (res.status) {
+                  
+                }
+            })
     this.setData({
-      shows: tmp
+      shows: tmp,
+      shows1: tmp1
     });
     wx.hideLoading();
   },

@@ -9,7 +9,12 @@
     <view wx:if="{{shows}}">
       <view class="lineOne" />
     </view>
-
+  </view>
+  <view class="pFindCar" bindtap="onClickShows">
+    人找车
+    <view wx:if="{{!shows}}">
+      <view class="lineOne" />
+    </view>
   </view>
   <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
     <view class="power_info" data-index="{{index}}" bindtap="onClickPowerInfo">
